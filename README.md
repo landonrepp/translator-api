@@ -9,7 +9,7 @@ The API is only designed to translate German text to English now, but can be eas
 1. Clone this repository
 2. Create a virtual environment:
    ```bash
-   python -m venv venv
+   
    ```
 3. Activate the virtual environment:
    - On macOS/Linux:
@@ -30,7 +30,7 @@ The API is only designed to translate German text to English now, but can be eas
 1. Set up environment variables by copying `.env.example` to `.env` and filling in the values
 2. Run the application:
    ```bash
-   python app.py
+    export FLASK_DEBUG=1 && flask run --port 5001
    ```
 
 ## Testing
@@ -38,18 +38,22 @@ The API is only designed to translate German text to English now, but can be eas
 Run tests using:
 ```bash
 python -m pytest
+```
 
 
 ## Sample payload
 
 ### Input
 
+```json
 [POST] http://127.0.0.1:5001/translate
 {
     "german_phrase": "Guten Tag"
 }
+```
 
 ## Output
+```json
 {
     "idiom_explanation": null,
     "translation": "Good day",
@@ -64,3 +68,4 @@ python -m pytest
         }
     ]
 }
+```
