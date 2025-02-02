@@ -25,12 +25,26 @@ The API is only designed to translate German text to English now, but can be eas
    pip install -r requirements.txt
    ```
 
-## Running the Application
+## Running the Application with Docker
+
+1. Build the Docker image:
+   ```bash
+   docker build -t translator-api .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -p 8000:8000 translator-api
+   ```
+
+3. Access the application at `http://127.0.0.1:8000`.
+
+## Running the Application (without Docker)
 
 1. Set up environment variables by copying `.env.example` to `.env` and filling in the values
 2. Run the application:
    ```bash
-    export FLASK_DEBUG=1 && flask run --port 5001
+    export FLASK_DEBUG=1 && export FLASK_APP=src/app.py && flask run --port 5001
    ```
 
 ## Testing
